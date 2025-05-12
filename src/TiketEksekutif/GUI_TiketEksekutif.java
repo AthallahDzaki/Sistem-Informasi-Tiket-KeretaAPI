@@ -2,18 +2,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package TiketKereta;
+package TiketEksekutif;
 
 /**
  *
  * @author athal
  */
-public class GUI_TiketKereta extends javax.swing.JFrame {
+public class GUI_TiketEksekutif extends javax.swing.JFrame {
 
     /**
-     * Creates new form GUI_TiketKereta
+     * Creates new form GUI_KeretaBarang
      */
-    public GUI_TiketKereta() {
+    public GUI_TiketEksekutif() {
         initComponents();
     }
 
@@ -26,44 +26,69 @@ public class GUI_TiketKereta extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        jTextField4 = new javax.swing.JTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        HargaTiket = new javax.swing.JTextField();
+        StasiunAsal = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        StasiunTujuan = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        JadwalBerangkat = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        JadwalKedatangan = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         Simpan = new javax.swing.JButton();
         jLabel13 = new javax.swing.JLabel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        TabelTiket = new javax.swing.JTable();
         jLabel14 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         jLabel15 = new javax.swing.JLabel();
+        NamaPenumpang = new javax.swing.JTextField();
+        NomorIdentitas = new javax.swing.JTextField();
+        JenisKelamin = new javax.swing.JTextField();
+        Usia = new javax.swing.JTextField();
+        NomorKursi = new javax.swing.JTextField();
+        NamaKereta = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        KelasKereta = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
+        jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        HargaTiket = new javax.swing.JTextField();
-        StasiunAsal = new javax.swing.JTextField();
-        NamaPenumpang = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        NomorIdentitas = new javax.swing.JTextField();
-        StasiunTujuan = new javax.swing.JTextField();
-        JenisKelamin = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        Usia = new javax.swing.JTextField();
-        JadwalBerangkat = new javax.swing.JTextField();
-        NomorKursi = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        NamaKereta = new javax.swing.JTextField();
-        JadwalKedatangan = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
+
+        jTextField4.setText("jTextField4");
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(jTable1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("PEMESANAN TIKET EKONOMI");
-        jLabel1.setAlignmentY(0.0F);
+        jLabel5.setText("Nomor Identitas :");
+
+        jLabel6.setText("Jenis Kelamin :");
+
+        jLabel7.setText("Usia :");
+
+        jLabel8.setText("Nomor Kursi :");
 
         jLabel9.setText("Nama Kereta :");
 
-        jLabel3.setText("Nama Penumpang :");
+        jLabel10.setText("Kelas Kereta :");
 
         jLabel11.setText("Harga Tiket :");
 
@@ -78,7 +103,16 @@ public class GUI_TiketKereta extends javax.swing.JFrame {
 
         jLabel13.setText("Stasiun Tujuan :");
 
-        TabelTiket.setModel(new javax.swing.table.DefaultTableModel(
+        jLabel14.setText("Jadwal Berangkat :");
+
+        jLabel15.setText("Jadwal Kedatangan :");
+
+        jLabel1.setText("PEMESANAN TIKET EKSEKUTIF");
+        jLabel1.setAlignmentY(0.0F);
+
+        jLabel3.setText("Nama Penumpang :");
+
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -94,28 +128,13 @@ public class GUI_TiketKereta extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane3.setViewportView(TabelTiket);
-        if (TabelTiket.getColumnModel().getColumnCount() > 0) {
-            TabelTiket.getColumnModel().getColumn(4).setMaxWidth(75);
-        }
-
-        jLabel14.setText("Jadwal Berangkat :");
+        jScrollPane3.setViewportView(jTable2);
 
         jButton1.setText("Hapus");
-
-        jLabel15.setText("Jadwal Kedatangan :");
 
         jButton2.setText("Batal");
 
         jButton3.setText("Close");
-
-        jLabel5.setText("Nomor Identitas :");
-
-        jLabel6.setText("Jenis Kelamin :");
-
-        jLabel7.setText("Usia :");
-
-        jLabel8.setText("Nomor Kursi :");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -135,7 +154,7 @@ public class GUI_TiketKereta extends javax.swing.JFrame {
                         .addComponent(jButton2)
                         .addGap(18, 18, 18)
                         .addComponent(jButton3)))
-                .addGap(254, 1041, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(6, 6, 6)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -145,6 +164,7 @@ public class GUI_TiketKereta extends javax.swing.JFrame {
                     .addComponent(jLabel7)
                     .addComponent(jLabel8)
                     .addComponent(jLabel9)
+                    .addComponent(jLabel10)
                     .addComponent(jLabel11)
                     .addComponent(jLabel12)
                     .addComponent(jLabel13)
@@ -158,6 +178,7 @@ public class GUI_TiketKereta extends javax.swing.JFrame {
                     .addComponent(Usia, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(NomorKursi, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(NamaKereta, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(KelasKereta, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(HargaTiket, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(StasiunAsal, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(StasiunTujuan, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -172,59 +193,58 @@ public class GUI_TiketKereta extends javax.swing.JFrame {
                 .addGap(9, 9, 9)
                 .addComponent(jLabel1)
                 .addGap(6, 6, 6)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(3, 3, 3)
-                                .addComponent(jLabel3)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel5)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel6)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel7)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel8)
-                                .addGap(15, 15, 15)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel9)
-                                    .addComponent(NamaKereta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(NamaPenumpang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(12, 12, 12)
-                                .addComponent(NomorIdentitas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(12, 12, 12)
-                                .addComponent(JenisKelamin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(12, 12, 12)
-                                .addComponent(Usia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(12, 12, 12)
-                                .addComponent(NomorKursi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(3, 3, 3)
-                                .addComponent(jLabel11)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel12)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel13)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel14)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel15))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(HargaTiket, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(12, 12, 12)
-                                .addComponent(StasiunAsal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(12, 12, 12)
-                                .addComponent(StasiunTujuan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(12, 12, 12)
-                                .addComponent(JadwalBerangkat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(12, 12, 12)
-                                .addComponent(JadwalKedatangan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(3, 3, 3)
+                        .addComponent(jLabel3)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel5)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel6)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel7)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel8)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel9)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel10)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel11)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel12)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel13)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel14)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel15))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(NamaPenumpang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)
+                        .addComponent(NomorIdentitas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)
+                        .addComponent(JenisKelamin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)
+                        .addComponent(Usia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)
+                        .addComponent(NomorKursi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)
+                        .addComponent(NamaKereta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)
+                        .addComponent(KelasKereta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)
+                        .addComponent(HargaTiket, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)
+                        .addComponent(StasiunAsal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)
+                        .addComponent(StasiunTujuan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)
+                        .addComponent(JadwalBerangkat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)
+                        .addComponent(JadwalKedatangan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(6, 6, 6)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Simpan)
                     .addComponent(jButton1)
@@ -237,7 +257,7 @@ public class GUI_TiketKereta extends javax.swing.JFrame {
 
     private void SimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SimpanActionPerformed
         // TODO add your handling code here:
-        TiketKereta tiket = new TiketKereta();
+        TiketEksekutif tiket = new TiketEksekutif();
         tiket.setNomorKereta("14"); // Otomatis
         tiket.setNomorIdentitas(NomorIdentitas.getText());
         tiket.setNamaPenumpang(NamaPenumpang.getText());
@@ -245,7 +265,7 @@ public class GUI_TiketKereta extends javax.swing.JFrame {
         tiket.setUsia(Integer.parseInt(Usia.getText()));
         tiket.setNomorKursi(NomorKursi.getText());
         tiket.setNamaKereta(NamaKereta.getText());
-        tiket.setKelasKereta("Ekonomi");
+        tiket.setKelasKereta(KelasKereta.getText());
         tiket.setHargaTiket(Integer.parseInt(HargaTiket.getText()));
         tiket.setStasiunAsal(StasiunAsal.getText());
         tiket.setStasiunTujuan(StasiunTujuan.getText());
@@ -253,7 +273,6 @@ public class GUI_TiketKereta extends javax.swing.JFrame {
         tiket.setJadwalKedatangan(JadwalKedatangan.getText());
     }//GEN-LAST:event_SimpanActionPerformed
 
-    
     /**
      * @param args the command line arguments
      */
@@ -271,20 +290,21 @@ public class GUI_TiketKereta extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(GUI_TiketKereta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GUI_TiketEksekutif.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(GUI_TiketKereta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GUI_TiketEksekutif.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(GUI_TiketKereta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GUI_TiketEksekutif.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(GUI_TiketKereta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GUI_TiketEksekutif.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new GUI_TiketKereta().setVisible(true);
+                new GUI_TiketEksekutif().setVisible(true);
             }
         });
     }
@@ -294,6 +314,7 @@ public class GUI_TiketKereta extends javax.swing.JFrame {
     private javax.swing.JTextField JadwalBerangkat;
     private javax.swing.JTextField JadwalKedatangan;
     private javax.swing.JTextField JenisKelamin;
+    private javax.swing.JTextField KelasKereta;
     private javax.swing.JTextField NamaKereta;
     private javax.swing.JTextField NamaPenumpang;
     private javax.swing.JTextField NomorIdentitas;
@@ -301,12 +322,12 @@ public class GUI_TiketKereta extends javax.swing.JFrame {
     private javax.swing.JButton Simpan;
     private javax.swing.JTextField StasiunAsal;
     private javax.swing.JTextField StasiunTujuan;
-    private javax.swing.JTable TabelTiket;
     private javax.swing.JTextField Usia;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -318,6 +339,10 @@ public class GUI_TiketKereta extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable2;
+    private javax.swing.JTextField jTextField4;
     // End of variables declaration//GEN-END:variables
 }

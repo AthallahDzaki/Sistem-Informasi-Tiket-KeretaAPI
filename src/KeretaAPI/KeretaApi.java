@@ -45,19 +45,7 @@ public class KeretaApi {
         this.Lokomotif = lokomotif;
     }
 
-    public void tampilkanDetail() {
-        System.out.println("===== DETAIL KERETA API =====");
-        System.out.println("Nomor KA: " + NO_KA);
-        System.out.println("Nama KA: " + Nama_KA);
-        System.out.println("Relasi: " + Relasi);
-        System.out.println("Lokomotif: " + Lokomotif);
-        System.out.println("Jarak Tempuh: " + KM_Tempuh + " km");
-        System.out.println("Rangkaian Gerbong:");
-        for (String gerbong : Rangkaian) {
-            System.out.println("- " + gerbong);
-        }
-    }
-
+    // Overloading: Menambahkan gerbong, bisa ditambahkan parameter untuk lokasi gerbong baru
     public void tambahGerbong(String gerbongBaru) {
         String[] newRangkaian = new String[Rangkaian.length + 1];
         System.arraycopy(Rangkaian, 0, newRangkaian, 0, Rangkaian.length);
@@ -66,6 +54,31 @@ public class KeretaApi {
         System.out.println("Gerbong " + gerbongBaru + " berhasil ditambahkan.");
     }
 
+    // Overloading: Menambahkan gerbong pada posisi tertentu
+    public void tambahGerbong(String gerbongBaru, int posisi) {
+        if (posisi < 0 || posisi > Rangkaian.length) {
+            System.out.println("Posisi gerbong tidak valid.");
+            return;
+        }
+        String[] newRangkaian = new String[Rangkaian.length + 1];
+        System.arraycopy(Rangkaian, 0, newRangkaian, 0, posisi);
+        newRangkaian[posisi] = gerbongBaru;
+        System.arraycopy(Rangkaian, posisi, newRangkaian, posisi + 1, Rangkaian.length - posisi);
+        Rangkaian = newRangkaian;
+        System.out.println("Gerbong " + gerbongBaru + " berhasil ditambahkan di posisi " + posisi);
+    }
+
+    // Overriding: Menimpa metode hitungTotalJarak untuk menghitung jarak total perjalanan
+    public double hitungTotalJarak(int jumlahPerjalanan) {
+        return KM_Tempuh * jumlahPerjalanan;
+    }
+
+    // Overloading: Menambahkan parameter untuk menghitung jarak dengan estimasi waktu
+    public double hitungTotalJarak(int jumlahPerjalanan, double estimasiWaktuPerjalanan) {
+        return (KM_Tempuh * jumlahPerjalanan) / estimasiWaktuPerjalanan;
+    }
+
+    // Menghapus Gerbong
     public void hapusGerbong(String gerbongHapus) {
         int index = -1;
         for (int i = 0; i < Rangkaian.length; i++) {
@@ -83,9 +96,5 @@ public class KeretaApi {
         } else {
             System.out.println("Gerbong " + gerbongHapus + " tidak ditemukan.");
         }
-    }
-
-    public double hitungTotalJarak(int jumlahPerjalanan) {
-        return KM_Tempuh * jumlahPerjalanan;
     }
 }

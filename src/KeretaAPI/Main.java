@@ -13,7 +13,5 @@ public class Main {
     {
         String[] Gerbong = new String[]{"2 K1 Lux", "16 K1 SS", "2 K/M1", "2P"};
         KeretaApi Gajayana = new KeretaApi("35 / 36", "Gajayana", "ML - GMR", "CC206", 1809.7, Gerbong);
-        
-        Gajayana.tampilkanDetail();
     }
 }

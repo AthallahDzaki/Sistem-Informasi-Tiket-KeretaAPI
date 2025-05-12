@@ -26,6 +26,8 @@ public class GUI_KeretaAPI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         NomorKA = new javax.swing.JTextField();
@@ -39,8 +41,21 @@ public class GUI_KeretaAPI extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         Simpan = new javax.swing.JButton();
         Tampilkan = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        InfoBox = new javax.swing.JTextArea();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(jTable1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -71,9 +86,33 @@ public class GUI_KeretaAPI extends javax.swing.JFrame {
             }
         });
 
-        InfoBox.setColumns(20);
-        InfoBox.setRows(5);
-        jScrollPane1.setViewportView(InfoBox);
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "Nama Kereta", "Relasi", "Lokomotif", "KM Tempuh"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Double.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane3.setViewportView(jTable2);
+        if (jTable2.getColumnModel().getColumnCount() > 0) {
+            jTable2.getColumnModel().getColumn(0).setMaxWidth(50);
+        }
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -82,7 +121,6 @@ public class GUI_KeretaAPI extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane1)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGap(160, 160, 160)
                         .addComponent(jLabel1)
@@ -107,9 +145,11 @@ public class GUI_KeretaAPI extends javax.swing.JFrame {
                                 .addComponent(Simpan)
                                 .addGap(18, 18, 18)
                                 .addComponent(Tampilkan)
-                                .addGap(0, 111, Short.MAX_VALUE))
+                                .addGap(0, 0, Short.MAX_VALUE))
                             .addComponent(KMTempuh))))
-                .addGap(42, 42, 42))
+                .addGap(38, 38, 38)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -140,9 +180,11 @@ public class GUI_KeretaAPI extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Simpan)
                     .addComponent(Tampilkan))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(16, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
@@ -153,23 +195,23 @@ public class GUI_KeretaAPI extends javax.swing.JFrame {
         // TODO add your handling code here:
         String[] Gerbong = new String[]{"2 K1 Lux", "16 K1 SS", "2 K/M1", "2P"};
         Kereta = new KeretaApi(NomorKA.getText(), NamaKA.getText(), Relasi.getText(), Lokomotif.getText(), Double.parseDouble(KMTempuh.getText()), Gerbong);
-        InfoBox.setText("Data Kereta Berhasil di Simpan");
+        
     }//GEN-LAST:event_SimpanActionPerformed
 
     private void TampilkanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TampilkanActionPerformed
         // TODO add your handling code here:
         if(Kereta != null) {
-            InfoBox.setText("");
-            InfoBox.append("===== DETAIL KERETA API =====\n");
-            InfoBox.append("Nomor KA: " + Kereta.getNO_KA() + "\n");
-            InfoBox.append("Nama KA: " + Kereta.getNama_KA() + "\n");
-            InfoBox.append("Relasi: " + Kereta.getRelasi() + "\n");
-            InfoBox.append("Lokomotif: " + Kereta.getLokomotif() + "\n");
-            InfoBox.append("Jarak Tempuh: " + Kereta.getKM_Tempuh() + " km\n");
-            InfoBox.append("Rangkaian Gerbong:\n");
-            for (String gerbong : Kereta.getRangkaian()) {
-                InfoBox.append("- " + gerbong + "\n");
-            }
+//            InfoBox.setText("");
+//            InfoBox.append("===== DETAIL KERETA API =====\n");
+//            InfoBox.append("Nomor KA: " + Kereta.getNO_KA() + "\n");
+//            InfoBox.append("Nama KA: " + Kereta.getNama_KA() + "\n");
+//            InfoBox.append("Relasi: " + Kereta.getRelasi() + "\n");
+//            InfoBox.append("Lokomotif: " + Kereta.getLokomotif() + "\n");
+//            InfoBox.append("Jarak Tempuh: " + Kereta.getKM_Tempuh() + " km\n");
+//            InfoBox.append("Rangkaian Gerbong:\n");
+//            for (String gerbong : Kereta.getRangkaian()) {
+//                InfoBox.append("- " + gerbong + "\n");
+//            }
         }
     }//GEN-LAST:event_TampilkanActionPerformed
 
@@ -209,7 +251,6 @@ public class GUI_KeretaAPI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextArea InfoBox;
     private javax.swing.JTextField KMTempuh;
     private javax.swing.JTextField Lokomotif;
     private javax.swing.JTextField NamaKA;
@@ -223,6 +264,9 @@ public class GUI_KeretaAPI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable2;
     // End of variables declaration//GEN-END:variables
 }
