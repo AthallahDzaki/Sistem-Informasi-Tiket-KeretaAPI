@@ -11,18 +11,22 @@ public class TiketEksekutif extends TiketKereta {
     }
 
     // Getter dan Setter
+    @Override
     public double getTarifTambahan() {
         return tarifTambahan;
     }
 
+    @Override
     public void setTarifTambahan(double tarifTambahan) {
         this.tarifTambahan = tarifTambahan;
     }
 
+    @Override
     public boolean isLayananMakan() {
         return layananMakan;
     }
 
+    @Override
     public void setLayananMakan(boolean layananMakan) {
         this.layananMakan = layananMakan;
     }

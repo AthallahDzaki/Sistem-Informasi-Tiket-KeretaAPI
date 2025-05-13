@@ -1,6 +1,18 @@
 package TiketKereta;
 
-public class TiketKereta {
+abstract class TiketKeretaAbstract {
+    public abstract double getTarifTambahan();
+    public abstract void setTarifTambahan(double tarifTambahan);
+    public abstract boolean isLayananMakan();
+    public abstract void setLayananMakan(boolean layananMakan);
+    public abstract double hitungHargaTotal(int jumlahTiket);
+    public abstract double hitungHargaTotal(int jumlahTiket, double diskonPersen);
+    public abstract double hitungHargaTotal(int jumlahTiket, int diskonTetap, boolean isFixedDiscount);
+    
+    public abstract String cekStatus();
+}
+
+public class TiketKereta extends TiketKeretaAbstract {
     private String nomorKereta;
     private String namaKereta;
     private String nomorTiket;
@@ -134,18 +146,22 @@ public class TiketKereta {
             System.out.println("Jadwal tidak dapat diubah karena tiket sudah " + statusTiket);
         }
     }
+    @Override
     public String cekStatus() {
         return statusTiket;
     }
 
+    @Override
     public double hitungHargaTotal(int jumlahTiket) {
         return hargaTiket * jumlahTiket;
     }
+    @Override
     public double hitungHargaTotal(int jumlahTiket, double diskonPersen) {
         double total = hargaTiket * jumlahTiket;
         double diskon = total * (diskonPersen / 100.0);
         return total - diskon;
     }
+    @Override
     public double hitungHargaTotal(int jumlahTiket, int diskonTetap, boolean isFixedDiscount) {
         double total = hargaTiket * jumlahTiket;
         if (isFixedDiscount) {
@@ -161,5 +177,25 @@ public class TiketKereta {
         } else {
             System.out.println("Kursi tidak dapat diubah karena tiket sudah " + statusTiket);
         }
+    }
+    
+    @Override
+    public double getTarifTambahan() {
+        return 0;
+    }
+
+    @Override
+    public void setTarifTambahan(double tarifTambahan) {
+        // Does Nothing
+    }
+
+    @Override
+    public boolean isLayananMakan() {
+        return false;
+    }
+
+    @Override
+    public void setLayananMakan(boolean layananMakan) {
+        // Does Nothing
     }
 }
